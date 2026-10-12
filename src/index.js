@@ -6,6 +6,13 @@ const PORT = 3000;
 
 app.use(express.json())
 
+function Logging(req,res,next){
+    console.log('Hello avrivan')
+    next();
+}
+
+app.use(Logging);
+
 app.get('/',(req, res)=>{
     res.json({message: 'Hello World'})
 })
